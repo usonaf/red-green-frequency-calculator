@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Frecuencia Rojo Verde | Comprendiendo la Frecuencia de Colores en tus Juegos</title>
+    <meta name="description" content="Calcula la frecuencia y el porcentaje de resultados rojos, verdes y violetas en tus juegos móviles. Herramienta simple y rápida para analizar patrones.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap');
+
+        :root {
+            --color-text: #333;
+            --color-background: #fdfaf6;
+            --color-primary: #8a6f4e;
+            --color-secondary: #c9b49e;
+            --color-accent: #a38c73;
+            --color-light-bg: #fffbf5;
+            --color-border: #e0d9d0;
+            --font-display: 'IBM Plex Sans', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-display);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            margin: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: flex-start;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: var(--color-light-bg);
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .statement {
+            flex: 2;
+            min-width: 300px;
+            padding: 30px;
+            background-color: var(--color-light-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--color-border);
+        }
+
+        .statement h2 {
+            color: var(--color-primary);
+            font-size: 1.8em;
+            margin-top: 0;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tool-panel {
+            flex: 1;
+            min-width: 280px;
+            padding: 25px;
+            background-color: var(--color-light-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--color-border);
+        }
+
+        .tool-panel h3 {
+            color: var(--color-accent);
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 0.95em;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 1em;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(138, 111, 78, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        button:hover {
+            background-color: #7b624b;
+        }
+
+        .result-section {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: var(--color-light-bg);
+            border-radius: 8px;
+            border: 1px dashed var(--color-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.95em;
+            color: var(--color-text);
+            min-height: 100px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .result-section p {
+            margin: 8px 0;
+        }
+
+        .result-section strong {
+            color: var(--color-primary);
+        }
+
+        .disclaimer {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f7f3ed;
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .disclaimer strong {
+            color: var(--color-accent);
+        }
+
+        .seo-section {
+            width: 100%;
+            padding: 40px 20px;
+            margin-top: 40px;
+            background-color: #f7f3ed;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            line-height: 1.8;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .seo-section h2 {
+            font-size: 1.6em;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        .seo-section p {
+            max-width: 800px;
+            margin: 0 auto 15px auto;
+        }
+
+        .seo-section a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .seo-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-light-bg);
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .statement, .tool-panel {
+                min-width: unset;
+                width: 100%;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            header p {
+                font-size: 1em;
+            }
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://red-green-frequency-calculator.onrender.com">
+    <meta property="og:title" content="Calculadora de Frecuencia Rojo Verde">
+    <meta property="og:description" content="Calcula la frecuencia y el porcentaje de resultados rojos, verdes y violetas en tus juegos móviles. Herramienta simple y rápida para analizar patrones.">
+    <meta property="og:url" content="https://red-green-frequency-calculator.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Frecuencia Rojo Verde", "description": "Calcula la frecuencia y el porcentaje de resultados rojos, verdes y violetas en tus juegos móviles. Herramienta simple y rápida para analizar patrones.", "url": "https://red-green-frequency-calculator.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="red-green-frequency-calculator" data-runtime-mode="palette_generator">
+    <header>
+        <h1>Calculadora de Frecuencia Rojo Verde</h1>
+        <p>Analizá los resultados de tus juegos con esta herramienta simple y efectiva.</p>
+    </header>
+
+    <div class="container">
+        <section class="statement">
+            <h2>Comprendiendo la Frecuencia de Colores en tus Juegos</h2>
+            <p>Esta calculadora te permite analizar la distribución de resultados de colores específicos (rojo, verde, violeta) en cualquier secuencia que desees. Es una herramienta ideal para quienes buscan entender patrones o simplemente cuantificar la aparición de ciertos eventos en sus juegos móviles o pasatiempos. Ingresá la cantidad de veces que cada color apareció y obtené al instante sus porcentajes.</p>
+            <p>Entender las frecuencias te puede dar una perspectiva más clara sobre la aleatoriedad o la distribución observada, sin prometer ventajas en juegos de azar. Es una aproximación estadística básica para observar el comportamiento de los colores a lo largo del tiempo.</p>
+            <div class="disclaimer">
+                <p><strong>Aviso importante:</strong> Esta herramienta es para análisis de datos y fines educativos. Los resultados de juegos, especialmente aquellos que involucran dinero, son inherentemente aleatorios. Esta calculadora no predice resultados futuros ni garantiza ganancias. Utilizala de forma responsable y recordá que el juego debe ser siempre una actividad recreativa. Si sentís que necesitás ayuda, buscá orientación.</p>
+            </div>
+        </section>
+
+        <section class="tool-panel">
+            <h3>Ingresá tus Datos</h3>
+            <form id="tool-form">
+                <div class="form-group">
+                    <label for="rojos">Cantidad de Rojos:</label>
+                    <input type="number" id="rojos" min="0" value="0" aria-label="Cantidad de resultados rojos">
+                </div>
+                <div class="form-group">
+                    <label for="verdes">Cantidad de Verdes:</label>
+                    <input type="number" id="verdes" min="0" value="0" aria-label="Cantidad de resultados verdes">
+                </div>
+                <div class="form-group">
+                    <label for="violetas">Cantidad de Violetas:</label>
+                    <input type="number" id="violetas" min="0" value="0" aria-label="Cantidad de resultados violetas">
+                </div>
+                <button type="submit" id="tool-submit" data-affiliate-slot="calculate-button">Calcular Porcentajes</button>
+            </form>
+
+            <div id="tool-result" class="result-section">
+                <p id="result-detail">Ingresá los valores y hacé clic en "Calcular Porcentajes" para ver el análisis.</p>
+            </div>
+        </section>
+    </div>
+
+    <section class="seo-section">
+        <h2>Herramientas de Análisis para Juegos Móviles en Argentina</h2>
+        <p>En Argentina, la curiosidad por entender los patrones en los juegos móviles y online es cada vez mayor. Nuestra Calculadora de Frecuencia Rojo Verde es una de las <a href="#" data-affiliate-slot="seo-link-herramientas">herramientas para juegos móviles</a> que te ayuda a desglosar esos datos. Ya sea que busques analizar tendencias para tu diversión o simplemente curiosidad, estas utilidades online son de gran valor.</p>
+        <p>Nos enfocamos en ofrecer recursos que promuevan el <a href="#" data-affiliate-slot="seo-link-juego-responsable">juego responsable</a> y la <a href="#" data-affiliate-slot="seo-link-seguridad-cuenta">seguridad de cuenta</a>. Entender las probabilidades no te hace un experto en predecir el futuro, pero sí en interpretar el pasado. Esta calculadora es ideal para visualizar la distribución de colores en tus estadísticas de juego.</p>
+        <p>Explorá más sobre cómo gestionar tus actividades de juego de manera inteligente y segura. Recordá que para cualquier transacción o verificación, en Argentina se utilizan métodos como CBU, CVU, alias, DNI, CUIT/CUIL, billetera virtual y transferencia bancaria. Elegí siempre plataformas confiables.</p>
+    </section>
+
+    <footer>
+        &copy; 2024 Tu Herramienta Online. Todos los derechos reservados. Para uso informativo y recreativo.
+    </footer>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const rojos = parseInt(document.getElementById('rojos').value) || 0;
+            const verdes = parseInt(document.getElementById('verdes').value) || 0;
+            const violetas = parseInt(document.getElementById('violetas').value) || 0;
+
+            const total = rojos + verdes + violetas;
+
+            let resultHtml = '';
+
+            if (total === 0) {
+                resultHtml = '<p>No ingresaste ningún valor. Por favor, introducí al menos un número para calcular.</p>';
+            } else {
+                const percRojos = ((rojos / total) * 100).toFixed(2);
+                const percVerdes = ((verdes / total) * 100).toFixed(2);
+                const percVioletas = ((violetas / total) * 100).toFixed(2);
+
+                resultHtml = `
+                    <p>Resultados Totales Analizados: <strong>${total}</strong></p>
+                    <p>Porcentaje de Rojos: <strong>${percRojos}%</strong></p>
+                    <p>Porcentaje de Verdes: <strong>${percVerdes}%</strong></p>
+                    <p>Porcentaje de Violetas: <strong>${percVioletas}%</strong></p>
+                    <p><em>Interpretación simple:</em> Con estos datos, podés ver la predominancia de cada color en tu serie de resultados. Por ejemplo, si el rojo es significativamente más alto, indica que apareció con mayor frecuencia.</p>
+                    <p><em>Nota sobre aleatoriedad:</em> La aparición de eventos futuros es independiente de los resultados pasados en juegos puramente aleatorios. Esta herramienta solo analiza datos históricos.</p>
+                `;
+            }
+
+            document.getElementById('tool-result').innerHTML = resultHtml;
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.removeAttribute("rel");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "Result area was not found.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Native form submission updated the result area.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "Result area did not render usable output.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Primary tool form was not found.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
