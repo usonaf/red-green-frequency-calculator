@@ -1,0 +1,46 @@
+{
+  "name": "Calculadora de Frecuencia Rojo Verde",
+  "description": "Calcula la frecuencia y el porcentaje de resultados rojos, verdes y violetas en tus juegos móviles. Herramienta simple y rápida para analizar patrones.",
+  "theme": "calculator",
+  "design_theme": "paper-vintage",
+  "structure_preset": "guided-steps-plus",
+  "render_direction": "campaign-slab",
+  "page_blueprint": "campaign-mosaic",
+  "language": "es",
+  "country": "AR",
+  "url": null,
+  "expected_url": "https://red-green-frequency-calculator.onrender.com",
+  "created": "2026-05-23T00:39:11.120424+00:00",
+  "owner_user_id": "user-1774822953462",
+  "owner_username": "admin",
+  "owner_display_name": "Administrator",
+  "provider_space_id": "provider-space",
+  "provider_space_name": "Provider space",
+  "status": "generated",
+  "run_id": "run-1779495708244",
+  "external_site_request_id": null,
+  "external_client_ref": null,
+  "external_source_label": null,
+  "source_type": "generated",
+  "publish_target": "render",
+  "mode": "production",
+  "github": {
+    "status": "pending"
+  },
+  "deployment": {
+    "status": "pending"
+  },
+  "qa": {
+    "status": "pending"
+  },
+  "features": [
+    "Hero pattern: stacked",
+    "Proof module: checklist",
+    "Design theme: Paper Vintage",
+    "Render direction: Campaign Slab",
+    "Page blueprint: Campaign Mosaic",
+    "Runtime mode: palette_generator",
+    "Generation mode: direct_html",
+    "Artifact rendered, awaiting QA and deployment"
+  ]
+}
