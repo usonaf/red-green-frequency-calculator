@@ -1,0 +1,313 @@
+{
+  "run_id": "run-1779495708244",
+  "job_index": 7,
+  "params": {
+    "owner_user_id": "user-1774822953462",
+    "owner_username": "admin",
+    "owner_display_name": "Administrator",
+    "count": 10,
+    "archetype": "calculator",
+    "market": "Argentina - herramientas para juegos móviles, seguridad de cuenta y juego responsable",
+    "language": "es",
+    "country": "AR",
+    "brief": "Calculadora de frecuencia de colores.",
+    "notes": "Crear sitios en español rioplatense para Argentina. Deben ser herramientas web reales, con formulario funcional, resultado visible, copy claro y disclaimer de juego responsable. No prometer ganancias, no incentivar apuestas, no usar claims de casino. Localizar pagos/KYC a CBU, CVU, alias, DNI, CUIT/CUIL, billetera virtual y transferencia bancaria.\nCalcula porcentajes de resultados rojo, verde y violeta.\nCampos: cantidad de rojos, verdes y violetas. Resultado: porcentajes, interpretación simple y nota sobre aleatoriedad.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "forum-de-jeu.shop",
+    "network_hosting_pool": "4vps:netoper | server_id=447345 | ip=5.253.59.18 | ssh_user=root | ssh_port=22",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "render",
+    "requested_publish_target": "render",
+    "provider_space_id": "provider-space",
+    "provider_space_name": "Provider space",
+    "allow_url_fallback": false,
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": true,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "calculator",
+      "tool",
+      "generator"
+    ],
+    "site_idea_title": "Calculadora de frecuencia rojo verde",
+    "site_idea_summary": "Calcula porcentajes de resultados rojo, verde y violeta.",
+    "forced_slug": "red-green-frequency-calculator"
+  },
+  "site_spec": {
+    "slug": "red-green-frequency-calculator",
+    "theme": {
+      "name": "Paper Vintage",
+      "slug": "paper-vintage",
+      "eyebrow": "Archive Utility",
+      "family": "paper-vintage",
+      "moods": [
+        "calm",
+        "classic",
+        "heritage",
+        "editorial"
+      ],
+      "archetypes": [
+        "generator",
+        "calculator"
+      ],
+      "niches": [
+        "documents",
+        "legal",
+        "leases",
+        "receipts",
+        "contracts"
+      ],
+      "keywords": [
+        "pdf",
+        "document",
+        "template",
+        "receipt",
+        "contract"
+      ],
+      "token_index": [
+        "archive",
+        "calculator",
+        "calm",
+        "classic",
+        "contract",
+        "contracts",
+        "document",
+        "documents",
+        "editorial",
+        "generator",
+        "heritage",
+        "leases",
+        "legal",
+        "paper",
+        "pdf",
+        "receipt",
+        "receipts",
+        "template",
+        "utility",
+        "vintage"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
+      "display_font": "\"Cormorant Garamond\", serif",
+      "body_font": "\"Inter\", sans-serif",
+      "layout": "showcase",
+      "card_style": "paper",
+      "button_style": "gradient",
+      "decor_style": "paper",
+      "hero_template": "0.94fr 1.06fr",
+      "seo_template": "1.18fr 0.82fr",
+      "feature_columns": 2,
+      "faq_columns": 3,
+      "hero_min_height": "78vh",
+      "panel_radius": "34px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "16px",
+      "palette": {
+        "bg": "#f7ecd6",
+        "surface": "rgba(255,248,235,0.92)",
+        "surface_border": "rgba(122, 74, 34, 0.22)",
+        "text": "#4a2c16",
+        "muted": "#7c5a40",
+        "accent": "#92400e",
+        "accent_alt": "#b45309",
+        "hero_glow": "rgba(146, 64, 14, 0.1)",
+        "button_text": "#fff9f0",
+        "panel_alt": "rgba(255,255,255,0.6)",
+        "shadow": "0 22px 56px rgba(90, 52, 28, 0.12)",
+        "input_fill": "rgba(122,74,34,0.04)"
+      }
+    },
+    "structure": {
+      "name": "Guided Steps Plus",
+      "slug": "guided-steps-plus",
+      "hero_variant": "stacked",
+      "proof_variant": "checklist",
+      "section_order": [
+        "features",
+        "proof",
+        "faq",
+        "seo"
+      ],
+      "feature_columns": 3,
+      "faq_columns": 2,
+      "family": "guided-flow",
+      "moods": [
+        "guided",
+        "clear",
+        "operator"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator",
+        "generator"
+      ],
+      "niches": [
+        "onboarding",
+        "services",
+        "planning",
+        "forms"
+      ],
+      "keywords": [
+        "guided",
+        "steps",
+        "operator",
+        "onboarding"
+      ],
+      "token_index": [
+        "calculator",
+        "checklist",
+        "clear",
+        "faq",
+        "features",
+        "flow",
+        "forms",
+        "generator",
+        "guided",
+        "onboarding",
+        "operator",
+        "planning",
+        "plus",
+        "proof",
+        "seo",
+        "services",
+        "stacked",
+        "steps",
+        "tool"
+      ]
+    },
+    "render_direction": "campaign-slab",
+    "render_direction_name": "Campaign Slab",
+    "page_blueprint": "campaign-mosaic",
+    "page_blueprint_name": "Campaign Mosaic",
+    "title": "Calculadora de Frecuencia Rojo Verde",
+    "tagline": "Comprendiendo la Frecuencia de Colores en tus Juegos",
+    "description": "Calcula la frecuencia y el porcentaje de resultados rojos, verdes y violetas en tus juegos móviles. Herramienta simple y rápida para analizar patrones.",
+    "feature_prefix": "Módulo",
+    "action": "Generate palette",
+    "cta_primary": "Calcular Porcentajes",
+    "cta_secondary": "Leer la FAQ",
+    "inputs": [
+      {
+        "id": "base_color",
+        "label": "Base color",
+        "type": "text",
+        "placeholder": "#ff5db1",
+        "weight": 1.0
+      },
+      {
+        "id": "palette_style",
+        "label": "Palette direction",
+        "type": "select",
+        "options": [
+          {
+            "id": "chrome-pop",
+            "label": "Chrome Pop",
+            "multiplier": 1
+          },
+          {
+            "id": "digital-candy",
+            "label": "Digital Candy",
+            "multiplier": 1
+          },
+          {
+            "id": "acid-pastel",
+            "label": "Acid Pastel",
+            "multiplier": 1
+          },
+          {
+            "id": "night-neon",
+            "label": "Night Neon",
+            "multiplier": 1
+          }
+        ],
+        "weight": 1.0
+      },
+      {
+        "id": "vibrancy",
+        "label": "Visual intensity",
+        "type": "number",
+        "placeholder": "8",
+        "weight": 0.5
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Campaign Slab",
+        "label": "Cadencia"
+      },
+      {
+        "value": "3",
+        "label": "Entradas"
+      },
+      {
+        "value": "Generated palette",
+        "label": "Salida"
+      }
+    ],
+    "trust_labels": [
+      "Campaign Slab",
+      "Calcular Porcentajes",
+      "Generated palette",
+      "Utilidad inmediata",
+      "Estructura SEO clara"
+    ],
+    "result_label": "Generated palette",
+    "result_unit": "EUR",
+    "runtime_mode": "palette_generator",
+    "page_variant": "showcase",
+    "faq_topic": "Calculadora de frecuencia rojo verde",
+    "faq_entries": [
+      {
+        "question": "¿Por qué usar esta herramienta para Calculadora de frecuencia rojo verde?",
+        "answer": "Ayuda a definir la necesidad rápidamente y a guiar hacia una siguiente acción clara en Argentina - herramientas para juegos móviles, seguridad de cuenta y juego responsable."
+      },
+      {
+        "question": "¿El resultado es inmediato?",
+        "answer": "Sí. La interfaz está pensada para devolver una respuesta rápida y clara desde la primera interacción."
+      },
+      {
+        "question": "¿La página está preparada para SEO?",
+        "answer": "Sí. La estructura combina utilidad, claridad editorial y señales de confianza sin recargar la experiencia."
+      }
+    ],
+    "seo_paragraphs": [
+      "Esta página está diseñada para captar una intención fuerte sobre Calculadora de frecuencia rojo verde y convertirla en una acción medible en Argentina - herramientas para juegos móviles, seguridad de cuenta y juego responsable.",
+      "La estructura hero-first mejora la claridad, reduce fricción y funciona bien tanto en móvil como en escritorio.",
+      "La base se mantiene ligera para facilitar pruebas, QA continua y variaciones SEO repetibles."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Calculadora de Frecuencia Rojo Verde | Comprendiendo la Frecuencia de Colores en tus Juegos</title>\n    <meta name=\"description\" content=\"Calcula la frecuencia y el porcentaje de resultados rojos, verdes y violetas en tus juegos móviles. Herramienta simple y rápida para analizar patrones.\">\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap');\n\n        :root {\n            --color-text: #333;\n            --color-background: #fdfaf6;\n            --color-primary: #8a6f4e;\n            --color-secondary: #c9b49e;\n            --color-accent: #a38c73;\n            --color-light-bg: #fffbf5;\n            --color-border: #e0d9d0;\n            --font-display: 'IBM Plex Sans', sans-serif;\n            --font-mono: 'IBM Plex Mono', monospace;\n        }\n\n        body {\n            font-family: var(--font-display);\n            color: var(--color-text);\n            background-color: var(--color-background);\n            margin: 0;\n            line-height: 1.6;\n            display: flex;\n            flex-direction: column;\n            min-height: 100vh;\n            justify-content: flex-start;\n        }\n\n        .container {\n            max-width: 1000px;\n            margin: 0 auto;\n            padding: 20px;\n            display: flex;\n            flex-wrap: wrap;\n            gap: 40px;\n            align-items: flex-start;\n            flex: 1;\n        }\n\n        header {\n            background-color: var(--color-primary);\n            color: var(--color-light-bg);\n            padding: 25px 20px;\n            text-align: center;\n            box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n        }\n\n        header h1 {\n            margin: 0;\n            font-size: 2.2em;\n            letter-spacing: -0.5px;\n        }\n\n        header p {\n            font-size: 1.1em;\n            opacity: 0.9;\n        }\n\n        .statement {\n            flex: 2;\n            min-width: 300px;\n            padding: 30px;\n            background-color: var(--color-light-bg);\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.08);\n            border: 1px solid var(--color-border);\n        }\n\n        .statement h2 {\n            color: var(--color-primary);\n            font-size: 1.8em;\n            margin-top: 0;\n            border-bottom: 2px solid var(--color-secondary);\n            padding-bottom: 10px;\n            margin-bottom: 20px;\n        }\n\n        .tool-panel {\n            flex: 1;\n            min-width: 280px;\n            padding: 25px;\n            background-color: var(--color-light-bg);\n            border-radius: 8px;\n            box-shadow: 0 4px 15px rgba(0,0,0,0.08);\n            border: 1px solid var(--color-border);\n        }\n\n        .tool-panel h3 {\n            color: var(--color-accent);\n            font-size: 1.4em;\n            margin-top: 0;\n            margin-bottom: 20px;\n            text-align: center;\n        }\n\n        .form-group {\n            margin-bottom: 18px;\n        }\n\n        label {\n            display: block;\n            margin-bottom: 8px;\n            font-weight: 600;\n            color: var(--color-text);\n            font-size: 0.95em;\n        }\n\n        input[type=\"number\"] {\n            width: calc(100% - 22px);\n            padding: 12px;\n            border: 1px solid var(--color-border);\n            border-radius: 6px;\n            font-family: var(--font-mono);\n            font-size: 1em;\n            background-color: #fff;\n            transition: border-color 0.3s;\n        }\n\n        input[type=\"number\"]:focus {\n            border-color: var(--color-primary);\n            outline: none;\n            box-shadow: 0 0 0 2px rgba(138, 111, 78, 0.2);\n        }\n\n        button {\n            width: 100%;\n            padding: 14px;\n            background-color: var(--color-primary);\n            color: white;\n            border: none;\n            border-radius: 6px;\n            font-size: 1.1em;\n            font-weight: 600;\n            cursor: pointer;\n            transition: background-color 0.3s ease;\n            box-shadow: 0 4px 8px rgba(0,0,0,0.1);\n        }\n\n        button:hover {\n            background-color: #7b624b;\n        }\n\n        .result-section {\n            margin-top: 25px;\n            padding: 20px;\n            background-color: var(--color-light-bg);\n            border-radius: 8px;\n            border: 1px dashed var(--color-secondary);\n            font-family: var(--font-mono);\n            font-size: 0.95em;\n            color: var(--color-text);\n            min-height: 100px;\n            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);\n        }\n\n        .result-section p {\n            margin: 8px 0;\n        }\n\n        .result-section strong {\n            color: var(--color-primary);\n        }\n\n        .disclaimer {\n            font-size: 0.85em;\n            color: #666;\n            margin-top: 25px;\n            padding: 15px;\n            background-color: #f7f3ed;\n            border-left: 4px solid var(--color-accent);\n            border-radius: 0 6px 6px 0;\n        }\n\n        .disclaimer strong {\n            color: var(--color-accent);\n        }\n\n        .seo-section {\n            width: 100%;\n            padding: 40px 20px;\n            margin-top: 40px;\n            background-color: #f7f3ed;\n            border-top: 1px solid var(--color-border);\n            text-align: center;\n            line-height: 1.8;\n            font-size: 0.9em;\n            color: #555;\n        }\n\n        .seo-section h2 {\n            font-size: 1.6em;\n            color: var(--color-primary);\n            margin-bottom: 20px;\n        }\n\n        .seo-section p {\n            max-width: 800px;\n            margin: 0 auto 15px auto;\n        }\n\n        .seo-section a {\n            color: var(--color-primary);\n            text-decoration: none;\n            font-weight: 600;\n        }\n\n        .seo-section a:hover {\n            text-decoration: underline;\n        }\n\n        footer {\n            background-color: var(--color-primary);\n            color: var(--color-light-bg);\n            text-align: center;\n            padding: 20px;\n            margin-top: auto;\n            font-size: 0.9em;\n        }\n\n        @media (max-width: 768px) {\n            .container {\n                flex-direction: column;\n                gap: 20px;\n            }\n            .statement, .tool-panel {\n                min-width: unset;\n                width: 100%;\n            }\n            header h1 {\n                font-size: 1.8em;\n            }\n            header p {\n                font-size: 1em;\n            }\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://red-green-frequency-calculator.onrender.com\">\n    <meta property=\"og:title\" content=\"Calculadora de Frecuencia Rojo Verde\">\n    <meta property=\"og:description\" content=\"Calcula la frecuencia y el porcentaje de resultados rojos, verdes y violetas en tus juegos móviles. Herramienta simple y rápida para analizar patrones.\">\n    <meta property=\"og:url\" content=\"https://red-green-frequency-calculator.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Calculadora de Frecuencia Rojo Verde\", \"description\": \"Calcula la frecuencia y el porcentaje de resultados rojos, verdes y violetas en tus juegos móviles. Herramienta simple y rápida para analizar patrones.\", \"url\": \"https://red-green-frequency-calculator.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"red-green-frequency-calculator\" data-runtime-mode=\"palette_generator\">\n    <header>\n        <h1>Calculadora de Frecuencia Rojo Verde</h1>\n        <p>Analizá los resultados de tus juegos con esta herramienta simple y efectiva.</p>\n    </header>\n\n    <div class=\"container\">\n        <section class=\"statement\">\n            <h2>Comprendiendo la Frecuencia de Colores en tus Juegos</h2>\n            <p>Esta calculadora te permite analizar la distribución de resultados de colores específicos (rojo, verde, violeta) en cualquier secuencia que desees. Es una herramienta ideal para quienes buscan entender patrones o simplemente cuantificar la aparición de ciertos eventos en sus juegos móviles o pasatiempos. Ingresá la cantidad de veces que cada color apareció y obtené al instante sus porcentajes.</p>\n            <p>Entender las frecuencias te puede dar una perspectiva más clara sobre la aleatoriedad o la distribución observada, sin prometer ventajas en juegos de azar. Es una aproximación estadística básica para observar el comportamiento de los colores a lo largo del tiempo.</p>\n            <div class=\"disclaimer\">\n                <p><strong>Aviso importante:</strong> Esta herramienta es para análisis de datos y fines educativos. Los resultados de juegos, especialmente aquellos que involucran dinero, son inherentemente aleatorios. Esta calculadora no predice resultados futuros ni garantiza ganancias. Utilizala de forma responsable y recordá que el juego debe ser siempre una actividad recreativa. Si sentís que necesitás ayuda, buscá orientación.</p>\n            </div>\n        </section>\n\n        <section class=\"tool-panel\">\n            <h3>Ingresá tus Datos</h3>\n            <form id=\"tool-form\">\n                <div class=\"form-group\">\n                    <label for=\"rojos\">Cantidad de Rojos:</label>\n                    <input type=\"number\" id=\"rojos\" min=\"0\" value=\"0\" aria-label=\"Cantidad de resultados rojos\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"verdes\">Cantidad de Verdes:</label>\n                    <input type=\"number\" id=\"verdes\" min=\"0\" value=\"0\" aria-label=\"Cantidad de resultados verdes\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"violetas\">Cantidad de Violetas:</label>\n                    <input type=\"number\" id=\"violetas\" min=\"0\" value=\"0\" aria-label=\"Cantidad de resultados violetas\">\n                </div>\n                <button type=\"submit\" id=\"tool-submit\" data-affiliate-slot=\"calculate-button\">Calcular Porcentajes</button>\n            </form>\n\n            <div id=\"tool-result\" class=\"result-section\">\n                <p id=\"result-detail\">Ingresá los valores y hacé clic en \"Calcular Porcentajes\" para ver el análisis.</p>\n            </div>\n        </section>\n    </div>\n\n    <section class=\"seo-section\">\n        <h2>Herramientas de Análisis para Juegos Móviles en Argentina</h2>\n        <p>En Argentina, la curiosidad por entender los patrones en los juegos móviles y online es cada vez mayor. Nuestra Calculadora de Frecuencia Rojo Verde es una de las <a href=\"#\" data-affiliate-slot=\"seo-link-herramientas\">herramientas para juegos móviles</a> que te ayuda a desglosar esos datos. Ya sea que busques analizar tendencias para tu diversión o simplemente curiosidad, estas utilidades online son de gran valor.</p>\n        <p>Nos enfocamos en ofrecer recursos que promuevan el <a href=\"#\" data-affiliate-slot=\"seo-link-juego-responsable\">juego responsable</a> y la <a href=\"#\" data-affiliate-slot=\"seo-link-seguridad-cuenta\">seguridad de cuenta</a>. Entender las probabilidades no te hace un experto en predecir el futuro, pero sí en interpretar el pasado. Esta calculadora es ideal para visualizar la distribución de colores en tus estadísticas de juego.</p>\n        <p>Explorá más sobre cómo gestionar tus actividades de juego de manera inteligente y segura. Recordá que para cualquier transacción o verificación, en Argentina se utilizan métodos como CBU, CVU, alias, DNI, CUIT/CUIL, billetera virtual y transferencia bancaria. Elegí siempre plataformas confiables.</p>\n    </section>\n\n    <footer>\n        &copy; 2024 Tu Herramienta Online. Todos los derechos reservados. Para uso informativo y recreativo.\n    </footer>\n\n    <script>\n        document.getElementById('tool-form').addEventListener('submit', function(event) {\n            event.preventDefault();\n\n            const rojos = parseInt(document.getElementById('rojos').value) || 0;\n            const verdes = parseInt(document.getElementById('verdes').value) || 0;\n            const violetas = parseInt(document.getElementById('violetas').value) || 0;\n\n            const total = rojos + verdes + violetas;\n\n            let resultHtml = '';\n\n            if (total === 0) {\n                resultHtml = '<p>No ingresaste ningún valor. Por favor, introducí al menos un número para calcular.</p>';\n            } else {\n                const percRojos = ((rojos / total) * 100).toFixed(2);\n                const percVerdes = ((verdes / total) * 100).toFixed(2);\n                const percVioletas = ((violetas / total) * 100).toFixed(2);\n\n                resultHtml = `\n                    <p>Resultados Totales Analizados: <strong>${total}</strong></p>\n                    <p>Porcentaje de Rojos: <strong>${percRojos}%</strong></p>\n                    <p>Porcentaje de Verdes: <strong>${percVerdes}%</strong></p>\n                    <p>Porcentaje de Violetas: <strong>${percVioletas}%</strong></p>\n                    <p><em>Interpretación simple:</em> Con estos datos, podés ver la predominancia de cada color en tu serie de resultados. Por ejemplo, si el rojo es significativamente más alto, indica que apareció con mayor frecuencia.</p>\n                    <p><em>Nota sobre aleatoriedad:</em> La aparición de eventos futuros es independiente de los resultados pasados en juegos puramente aleatorios. Esta herramienta solo analiza datos históricos.</p>\n                `;\n            }\n\n            document.getElementById('tool-result').innerHTML = resultHtml;\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.removeAttribute(\"rel\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"Result area was not found.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Native form submission updated the result area.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"Result area did not render usable output.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Primary tool form was not found.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
